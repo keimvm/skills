@@ -7,6 +7,7 @@
 | スキル | 用途 |
 | --- | --- |
 | [html](skills/html/SKILL.md) | 文章や仕組みを構造化し、必要な図表を添えた単一HTMLの説明資料を作る |
+| [natural-japanese](skills/natural-japanese/SKILL.md) | AIの回答を、必要な補足を添えつつ、自然で理解しやすい日本語に整える |
 | [thinking-partner](skills/thinking-partner/SKILL.md) | 対話で思いと要望の骨格を言語化し、終了時にMarkdownの要件メモへまとめる |
 | [wait-what](skills/wait-what/SKILL.md) | 直前の説明を、背景や話のつながりを補って、やさしい日本語で短く説明し直す |
 
@@ -20,6 +21,7 @@ Node.jsとnpmが利用できる環境で実行します。
 npx skills@latest add keimvm/skills
 
 npx skills@latest add keimvm/skills --skill html -g
+npx skills@latest add keimvm/skills --skill natural-japanese -g
 npx skills@latest add keimvm/skills --skill thinking-partner -g
 npx skills@latest add keimvm/skills --skill wait-what -g
 ```
