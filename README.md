@@ -72,6 +72,20 @@ push前でも、このリポジトリのルートで検出を確認できます�
 npx skills@latest add . --list
 ```
 
+## 更新・削除
+
+上の `-g` でインストールしたスキルの例です。`html` は対象のスキル名に置き換えてください。
+
+```bash
+# インストール済みのスキルを最新版へ更新
+npx skills@latest update html -g
+
+# Codexからスキルを削除
+npx skills@latest remove html -g -a codex
+```
+
+プロジェクト単位で入れた場合は、そのプロジェクトで、更新時は `-g` を `-p` に変更し、削除時は `-g` を外して実行します。
+
 ## スキルの追加
 
 1. `skills/<skill-name>/SKILL.md` を作成します。
