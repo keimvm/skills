@@ -10,7 +10,9 @@
 ├── AGENTS.md
 ├── .gitignore
 └── skills/
-    └── thinking-partner/
+    ├── thinking-partner/
+    │   └── SKILL.md
+    └── wait-what/
         └── SKILL.md
 ```
 
@@ -19,6 +21,7 @@
 | スキル | 用途 |
 | --- | --- |
 | [thinking-partner](skills/thinking-partner/SKILL.md) | 対話で思いと要望の骨格を言語化し、終了時にMarkdownの要件メモへまとめる |
+| [wait-what](skills/wait-what/SKILL.md) | 直前の説明を、背景や話のつながりを補って、やさしい日本語で短く説明し直す |
 
 ## 使い方
 
@@ -31,7 +34,11 @@ npx skills@latest add keimvm/skills
 
 # Codexで全プロジェクトから使う
 npx skills@latest add keimvm/skills --skill thinking-partner -g -a codex
+npx skills@latest add keimvm/skills --skill wait-what -g -a codex
 ```
+
+`wait-what` は、開発に限らず、会話の説明についていけないときに明示して呼び出します。
+例: `$wait-what` 直前の説明を、もう少しかみ砕いて。
 
 push前でも、このリポジトリのルートで検出を確認できます。`--list` はインストールを行いません。
 
@@ -64,3 +71,4 @@ description: このスキルで何を行い、どのような依頼で使うか�
 
 - [skills CLI](https://github.com/vercel-labs/skills)
 - [Agent Skills仕様](https://agentskills.io/specification)
+- [wait-whatの着想元](https://github.com/mattpocock/skills/blob/main/skills/productivity/wait-what/SKILL.md)（日本語・汎用の会話向けに構成）
