@@ -2,25 +2,6 @@
 
 個人用のAgent Skillsを管理するリポジトリです。
 
-## 構成
-
-```text
-.
-├── README.md
-├── AGENTS.md
-├── .gitignore
-└── skills/
-    ├── html/
-    │   ├── SKILL.md
-    │   ├── LICENSE
-    │   ├── design-system/
-    │   └── scripts/
-    ├── thinking-partner/
-    │   └── SKILL.md
-    └── wait-what/
-        └── SKILL.md
-```
-
 ## スキル一覧
 
 | スキル | 用途 |
@@ -38,35 +19,10 @@ Node.jsとnpmが利用できる環境で実行します。
 # スキルを選んでインストール
 npx skills@latest add keimvm/skills
 
-# Codexで全プロジェクトから使う
-npx skills@latest add keimvm/skills --skill html -g -a codex
-npx skills@latest add keimvm/skills --skill thinking-partner -g -a codex
-npx skills@latest add keimvm/skills --skill wait-what -g -a codex
+npx skills@latest add keimvm/skills --skill html -g
+npx skills@latest add keimvm/skills --skill thinking-partner -g
+npx skills@latest add keimvm/skills --skill wait-what -g
 ```
-
-`html` は、理解したい文章や概念を、構造化した説明資料として読みたいときに使います。
-例: `$html` この仕組みを、必要な図や比較表を交えて分かりやすく説明して。
-
-- 元の生成り・白・黒を基調とするデザインと、青・赤の差し色を継承します。
-- 図は説明に役立つところで使い、冒頭の図解は必須にしません。
-- 主な説明は表示し、補足は折りたたみます。用語欄は最初は開き、閉じると本文が幅を使えます。
-- 出力はCSS・JavaScriptを埋め込んだ1つのHTMLです。外部フォント・MathJax・Highlight.jsの実行時読み込みは必須にせず、端末のフォントや事前描画を使います。
-
-[表示と操作の見本](skills/html/design-system/component-samples.html)をブラウザで開いて確認できます。
-見本の原稿、CSS、JavaScriptを変更した場合は、Python 3で見本を再生成します。完成HTMLを読む側にPythonは不要です。
-
-```bash
-python3 skills/html/scripts/build-html.py \
-  skills/html/design-system/component-samples.template.html \
-  skills/html/design-system/component-samples.html
-```
-
-このスクリプトは2つのマーカーに同梱CSS・JavaScriptを埋め込みます。本文の画像などは自動変換しないため、原稿を作る際にデータURIやインラインSVGにします。
-
-`wait-what` は、開発に限らず、会話の説明についていけないときに明示して呼び出します。
-例: `$wait-what` 直前の説明を、もう少しかみ砕いて。
-
-push前でも、このリポジトリのルートで検出を確認できます。`--list` はインストールを行いません。
 
 ```bash
 npx skills@latest add . --list
@@ -81,7 +37,7 @@ npx skills@latest add . --list
 npx skills@latest update html -g
 
 # Codexからスキルを削除
-npx skills@latest remove html -g -a codex
+npx skills@latest remove html -g
 ```
 
 プロジェクト単位で入れた場合は、そのプロジェクトで、更新時は `-g` を `-p` に変更し、削除時は `-g` を外して実行します。
