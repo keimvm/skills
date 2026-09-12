@@ -8,3 +8,5 @@
 - スキルの追加・変更時はREADMEの一覧と使い方も確認する。
 - 変更後はルートで `npx skills@latest add . --list` を実行し、対象スキルの名前と説明が表示されることを確認する。
 - `git diff --check` で差分の空白エラーを確認する。ステージ済みの変更には `git diff --cached --check` を使う。
+
+@CLAUDE.md
