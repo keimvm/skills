@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <title>理解を助ける説明資料 — 部品見本</title>
+  <!-- html-skill:styles -->
+</head>
+<body>
+<div class="mb-page">
+  <div class="mb-toolbar">
+    <button class="mb-glossary-toggle" type="button" aria-expanded="true" aria-controls="document-glossary" hidden>用語欄を閉じる</button>
+  </div>
+
+  <div class="mb-wrap">
+    <main class="mb-main">
+      <div class="mb-hero">
+        <header class="mb-header">
+          <h1>理解を助ける説明資料</h1>
+        </header>
+        <p class="mb-lede">文章を読み進めながら、必要なところで比較や図を使う。補足は開いて読み、用語欄は必要に応じて閉じられます。</p>
+
+        <nav class="mb-toc" aria-label="目次">
+          <ol>
+            <li><a href="#structure">説明の流れをつくる</a></li>
+            <li><a href="#comparison">違いを並べて捉える</a></li>
+            <li><a href="#figure">関係を図で補う</a></li>
+            <li><a href="#details">補足を必要なときに読む</a></li>
+            <li><a href="#expression">表記と出典を揃える</a></li>
+          </ol>
+        </nav>
+
+        <div class="mb-summary">
+          <p>見出しで道筋を示し、文章で意味をつなぎます。図や表は、<em>理解の助けになる箇所</em>に置きます。</p>
+        </div>
+      </div>
+
+      <section aria-labelledby="structure">
+        <h2 id="structure">説明の流れをつくる</h2>
+        <p>まず、何を理解するための資料なのかを示します。前提を揃えたら本題へ進み、身近な例を通じて確かめます。読み手が次の段落へ自然に進めるよう、一つの段落では一つの話を扱います。</p>
+        <p>図を置く場所は内容に合わせて決めます。冒頭の文章だけで要点が伝わる場合は、そのまま説明を続けます。専門用語は本文で短く説明し、繰り返し参照するものを用語欄にもまとめます。</p>
+      </section>
+
+      <section aria-labelledby="comparison">
+        <h2 id="comparison">違いを並べて捉える</h2>
+        <p>共通の観点で見比べたいときは、比較する対象を横に並べると違いを捉えやすくなります。狭い画面では縦に並びます。</p>
+        <div class="mb-grid-2">
+          <div class="mb-card">
+            <div class="mb-card-title">文章</div>
+            <p>理由や条件を順に説明します。背景と結果をつなぎ、細かな違いにも言葉を添えられます。</p>
+          </div>
+          <div class="mb-card">
+            <div class="mb-card-title">図表</div>
+            <p>位置関係や対応を同時に見せます。全体と部分の関係や、同じ観点での違いを捉える助けになります。</p>
+          </div>
+        </div>
+        <div class="mb-table-scroll" role="region" aria-label="表現方法の対応表" tabindex="0">
+          <table>
+            <thead><tr><th scope="col">伝えたいこと</th><th scope="col">使える表現</th></tr></thead>
+            <tbody>
+              <tr><th scope="row" class="mb-rowlabel">理由や背景</th><td>つながりのある文章</td></tr>
+              <tr><th scope="row" class="mb-rowlabel">対象間の違い</th><td>比較表や並置したカード</td></tr>
+              <tr><th scope="row" class="mb-rowlabel">全体と部分</th><td>包含関係を表す図</td></tr>
+              <tr><th scope="row" class="mb-rowlabel">単純な手順</th><td>番号付きの説明</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="figure">
+        <h2 id="figure">関係を図で補う</h2>
+        <p>たとえば「資料には本文と補足が含まれる」という関係は、外枠と内側の領域で表せます。文章の一部を単に箱へ移すのではなく、図の位置や大きさに意味を持たせます。</p>
+        <figure class="mb-figure">
+          <div class="mb-figure-frame">
+            <svg viewBox="0 0 440 230" width="440" role="img" aria-labelledby="figure-title figure-desc">
+              <title id="figure-title">資料に含まれる本文と補足</title>
+              <desc id="figure-desc">資料の外枠の中に、本文と補足の二つの領域がある。本文と補足はともに資料の一部。</desc>
+              <g fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="10" y="10" width="420" height="210" rx="12"/>
+                <rect x="32" y="72" width="220" height="120" rx="10"/>
+                <rect x="274" y="72" width="134" height="120" rx="10"/>
+              </g>
+              <g fill="currentColor" text-anchor="middle" font-size="18">
+                <text x="220" y="46">資料</text>
+                <text x="142" y="139">本文</text>
+                <text x="341" y="139">補足</text>
+              </g>
+            </svg>
+          </div>
+          <figcaption>図1　外枠と内側の領域で、全体と部分の関係を示す。</figcaption>
+        </figure>
+      </section>
+
+      <section aria-labelledby="details">
+        <h2 id="details">補足を必要なときに読む</h2>
+        <p>説明の筋道は、補足を開かなくても追えるようにします。追加の背景や細かな条件は、見出しを押すと読める形にまとめます。</p>
+        <details class="mb-details">
+          <summary>詳しく：折りたたみに入れる内容</summary>
+          <p>理解を深める追加例、細かな前提、例外的な条件などを入れます。本論の意味を変える重要な条件は、本文にも明記します。</p>
+          <p>用語欄を閉じても、本文での用語説明は残ります。印刷では補足と用語欄を含めて読み通せます。</p>
+        </details>
+        <details class="mb-details">
+          <summary>詳しく：この見本の配色</summary>
+          <p>背景は生成り <code>#FAF9F6</code>、面は白、見出しと罫線は黒です。リンクに青 <code>#2990DA</code>、強いアクセントに赤 <code>#D63A2F</code> を使います。</p>
+        </details>
+      </section>
+
+      <section aria-labelledby="expression">
+        <h2 id="expression">表記と出典を揃える</h2>
+        <p>分類には <span class="mb-chip">文章</span> <span class="mb-chip">比較</span> <span class="mb-chip">図解</span> のような小さなラベルを使えます。引用は出典を添え、原文と訳文を同じ大きさで並べます。</p>
+        <blockquote class="mb-quote">
+          <p class="mb-quote-original" lang="en">This is a sample quotation.</p>
+          <p class="mb-quote-ja">これは引用の見本です。</p>
+          <p class="mb-quote-source">出典：この見本用に作成した例文</p>
+        </blockquote>
+        <p>コードは言語を明示します。次の例はHTMLとして表示しているだけで、コードの実行は行いません。</p>
+        <pre><code class="language-html">&lt;details class="mb-details"&gt;
+  &lt;summary&gt;補足を読む&lt;/summary&gt;
+  &lt;p&gt;必要なときに読める説明。&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+        <p>コード差分は理由を説明してから示します。たとえば補足を最初は閉じておく場合、<code>open</code> 属性を外します。</p>
+        <pre class="mb-diff"><code class="nohighlight"><span class="del">&lt;details class="mb-details" open&gt;</span>
+<span class="add">&lt;details class="mb-details"&gt;</span></code></pre>
+        <p>デザインの出典は <a href="https://github.com/mathbullet/skills/tree/5ab997fcb8a80da4938bacb0a86cbd568e1018a7/plugins/html/skills/html">mathbullet/skills の html スキル</a>です。この見本はCSSとJavaScriptを埋め込んだ1つのHTMLで、ネット接続なしでも表示と開閉ができます。</p>
+      </section>
+    </main>
+
+    <aside class="mb-glossary" id="document-glossary" aria-labelledby="glossary-title">
+      <h2 id="glossary-title">用語</h2>
+      <dl>
+        <dt>本文</dt><dd>理解してほしい内容を、筋道に沿って説明する中心の文章。</dd>
+        <dt>補足</dt><dd>本論に加えて、詳しく知りたいときに読む説明。</dd>
+        <dt>並置</dt><dd>対象を並べて、共通点や違いを見比べられるようにすること。</dd>
+        <dt>包含関係</dt><dd>あるものが、別のものの一部として含まれている関係。</dd>
+        <dt>単一HTML</dt><dd>見た目と操作に必要な情報を埋め込み、1ファイルで開けるHTML。</dd>
+      </dl>
+    </aside>
+  </div>
+</div>
+<!-- html-skill:script -->
+</body>
+</html>
