@@ -8,6 +8,7 @@
 | --- | --- |
 | [html](skills/html/SKILL.md) | 文章や仕組みを構造化し、必要な図表を添えた単一HTMLの説明資料を作る |
 | [natural-japanese](skills/natural-japanese/SKILL.md) | AIの回答を、必要な補足を添えつつ、自然で理解しやすい日本語に整える |
+| [rfp](skills/rfp/SKILL.md) | 対話で言葉にした要望の骨格を、人にもエージェントにも渡せるRFP（提案依頼書）のMarkdownにまとめる |
 | [thinking-partner](skills/thinking-partner/SKILL.md) | 対話で思いと要望の骨格を一緒に言語化する |
 | [to-spec](skills/to-spec/SKILL.md) | 会話で話した要件を、理由や未決事項も含めて簡潔なMarkdownの要件メモにまとめる |
 | [wait-what](skills/wait-what/SKILL.md) | 直前の説明を、背景や話のつながりを補って、やさしい日本語で短く説明し直す |
@@ -23,6 +24,7 @@ npx skills@latest add keimvm/skills
 
 npx skills@latest add keimvm/skills --skill html -g
 npx skills@latest add keimvm/skills --skill natural-japanese -g
+npx skills@latest add keimvm/skills --skill rfp -g
 npx skills@latest add keimvm/skills --skill thinking-partner -g
 npx skills@latest add keimvm/skills --skill to-spec -g
 npx skills@latest add keimvm/skills --skill wait-what -g
@@ -33,6 +35,14 @@ npx skills@latest add . --list
 ```
 
 `to-spec`は、会話の最後に「`$to-spec` ここまでの要件を簡潔にまとめて」のように呼び出します。目的・決まった要件・未決事項を、必要な理由とともにMarkdownで整理します。
+
+`rfp`は、`thinking-partner`で骨格がまとまった後に「RFP にしますか」と聞かれて呼ばれるほか、単体でも「`$rfp` ここまでの要望をRFPにして」のように呼び出せます。目的・実現したい状態・範囲・大切にしたいことに、完了条件と成果物の形式を加えたMarkdownファイルを保存します。
+
+`thinking-partner`からRFPを作成する機能は、`rfp`に依存します。`thinking-partner`の導入・更新だけでは`rfp`は自動追加されないため、この連携を使う場合は両方をインストールしてください。要望の骨格を整理する対話は、`thinking-partner`だけで利用できます。
+
+```bash
+npx skills@latest add keimvm/skills --skill thinking-partner rfp -g
+```
 
 ## 更新・削除
 
