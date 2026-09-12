@@ -10,7 +10,7 @@
 ├── AGENTS.md
 ├── .gitignore
 └── skills/
-    └── requirement-dialogue/
+    └── thinking-partner/
         └── SKILL.md
 ```
 
@@ -18,7 +18,7 @@
 
 | スキル | 用途 |
 | --- | --- |
-| [requirement-dialogue](skills/requirement-dialogue/SKILL.md) | 短い対話で認識を合わせ、要望の骨格を整理する |
+| [thinking-partner](skills/thinking-partner/SKILL.md) | 対話で思いと要望の骨格を言語化し、終了時にMarkdownの要件メモへまとめる |
 
 ## 使い方
 
@@ -30,7 +30,7 @@ Node.jsとnpmが利用できる環境で実行します。
 npx skills@latest add keimvm/skills
 
 # Codexで全プロジェクトから使う
-npx skills@latest add keimvm/skills --skill requirement-dialogue -g -a codex
+npx skills@latest add keimvm/skills --skill thinking-partner -g -a codex
 ```
 
 push前でも、このリポジトリのルートで検出を確認できます。`--list` はインストールを行いません。
