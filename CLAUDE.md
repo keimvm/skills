@@ -30,7 +30,8 @@ python3 skills/html/scripts/build-html.py skills/html/design-system/component-sa
 ### SKILL.md の frontmatter
 
 - `name` は英小文字・数字・ハイフンで 64 文字以内。先頭・末尾・連続のハイフンは不可。`description` は 1024 文字以内。
-- 対話系スキル（natural-japanese, software-spec, thinking-partner, wait-what）は `disable-model-invocation: true` を付け、ユーザーが明示的に呼ぶ前提にしている。`html` と `rfp` は付けず、モデルが自動選択できる（`rfp` は thinking-partner が対話の最後に呼び出すため）。新規スキルもこの区別に従う。
+- 対話系スキル（natural-japanese, project-plan, software-spec, wait-what）は `disable-model-invocation: true` を付け、ユーザーが明示的に呼ぶ前提にしている。`html` は付けず、モデルが自動選択できる。新規スキルもこの区別に従う。
+- `project-plan` と `software-spec` は、それぞれ対話から文書の保存まで担当し、ほかのスキルは呼び出さない。企画書 `project-plan.md` を介して連携し、標準の保存先は `docs/` とする。
 
 ### README の保守
 

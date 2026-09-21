@@ -8,9 +8,8 @@
 | --- | --- |
 | [html](skills/html/SKILL.md) | 文章や仕組みを構造化し、必要な図表を添えた単一HTMLの説明資料を作る |
 | [natural-japanese](skills/natural-japanese/SKILL.md) | AIの回答を、必要な補足を添えつつ、自然で理解しやすい日本語に整える |
-| [rfp](skills/rfp/SKILL.md) | 対話で言葉にした要望の骨格を、人にもエージェントにも渡せるRFP（提案依頼書）のMarkdownにまとめる |
-| [software-spec](skills/software-spec/SKILL.md) | RFPをもとに、対話で必要最小限のソフトウェア要件と技術構成を決め、二つのMarkdownにまとめる |
-| [thinking-partner](skills/thinking-partner/SKILL.md) | 対話で思いと要望の骨格を一緒に言語化する |
+| [project-plan](skills/project-plan/SKILL.md) | 対話で企画の骨格を整理し、Markdownの企画書project-plan.mdにまとめる |
+| [software-spec](skills/software-spec/SKILL.md) | 企画書をもとに、対話で必要最小限のソフトウェア要件と技術構成を決め、二つのMarkdownにまとめる |
 | [wait-what](skills/wait-what/SKILL.md) | 直前の説明を、背景や話のつながりを補って、やさしい日本語で短く説明し直す |
 
 ## 使い方
@@ -24,9 +23,8 @@ npx skills@latest add keimvm/skills
 
 npx skills@latest add keimvm/skills --skill html -g
 npx skills@latest add keimvm/skills --skill natural-japanese -g
-npx skills@latest add keimvm/skills --skill rfp -g
+npx skills@latest add keimvm/skills --skill project-plan -g
 npx skills@latest add keimvm/skills --skill software-spec -g
-npx skills@latest add keimvm/skills --skill thinking-partner -g
 npx skills@latest add keimvm/skills --skill wait-what -g
 ```
 
@@ -34,17 +32,35 @@ npx skills@latest add keimvm/skills --skill wait-what -g
 npx skills@latest add . --list
 ```
 
-`rfp`は、`thinking-partner`で骨格がまとまった後に「RFP にしますか」と聞かれて呼ばれるほか、単体でも「`$rfp` ここまでの要望をRFPにして」のように呼び出せます。目的・実現したい状態・範囲・大切にしたいことに、完了条件と成果物の形式を加えたMarkdownファイルを保存します。`thinking-partner`から呼ぶ場合も、`rfp`は別途インストールが必要です。
+### 企画から要件定義へ
 
-`thinking-partner`からRFPを作成する機能は、`rfp`に依存します。`thinking-partner`の導入・更新だけでは`rfp`は自動追加されないため、この連携を使う場合は両方をインストールしてください。要望の骨格を整理する対話は、`thinking-partner`だけで利用できます。
+`project-plan`は「`$project-plan このアイデアの目的や範囲を整理したい`」のように呼び出します。ソフトウェアに限らず、対話で企画の骨格を整理し、認識がそろったら文書化の要否を再確認せず `project-plan.md` に保存します。目的・実現したい状態・範囲・制約に、概略の完了条件と成果物の形式、未決事項を加えた短い企画書です。
+
+`software-spec`は、企画書を渡して「`$software-spec docs/project-plan.mdから要件と技術構成を詰めたい`」のように呼び出します。AIの提案・推奨理由を参考に、対話で一つずつ決め、実装に必要な最小限の内容を `software-requirements.md` と `software-stack.md` に保存します。細部は実装時に委ね、まだ判断が必要な未決事項とは分けて残します。
+
+両スキルとも、途中でまとめを求めればその時点の内容を保存し、判断が必要な未決事項が残る場合は「検討中」と明記します。未確認・推定・案は合意事項と区別し、要件定義への引き継ぎでも確定扱いにしません。保存先はユーザー指定、既存の文書配置、標準の `docs/` の順に従います。
+
+| スキル | 標準の出力先 |
+| --- | --- |
+| `project-plan` | `docs/project-plan.md` |
+| `software-spec` | `docs/software-requirements.md`、`docs/software-stack.md` |
+
+両スキルはそれぞれ文書保存まで完結し、ほかのスキルは呼び出しません。`software-spec`は企画書があれば単体で利用でき、既存のRFPもファイル名や保存場所を変えずに渡せます。
+
+### 旧スキルからの切り替え
+
+`thinking-partner`を `project-plan` に改名し、`rfp` の文書作成機能を統合しました。旧二スキルを使っていた場合は、`project-plan`をインストールし、以後は `$project-plan` を呼び出してください。要件定義にも使う場合は、`software-spec`も最新版をインストールします。
 
 ```bash
-npx skills@latest add keimvm/skills --skill thinking-partner rfp -g
+npx skills@latest add keimvm/skills --skill project-plan -g
+npx skills@latest add keimvm/skills --skill software-spec -g
+
+# 旧スキルをグローバルにインストールしていた場合
+npx skills@latest remove thinking-partner -g
+npx skills@latest remove rfp -g
 ```
 
-`software-spec`は、作成済みのRFPを渡して「`$software-spec このRFPから要件と技術構成を詰めたい`」のように呼び出します。AIの提案・推奨理由を参考に、対話で一つずつ決め、実装に必要な最小限の内容を `software-requirements.md` と `software-stack.md` に保存します。細部は実装時に委ね、まだ判断が必要な未決事項とは分けて残します。保存先の指定や既存の文書配置がなければ `docs/` に保存します。
-
-`software-spec`はRFPを入力として使い、ほかのスキルは呼び出しません。RFPがあれば単体で利用できます。
+プロジェクト単位のインストールでは `-g` を外し、対象プロジェクトで実行します。過去に作成した文書を移動・改名する必要はありません。
 
 ## 更新・削除
 
