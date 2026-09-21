@@ -9,6 +9,7 @@
 | [html](skills/html/SKILL.md) | 文章や仕組みを構造化し、必要な図表を添えた単一HTMLの説明資料を作る |
 | [natural-japanese](skills/natural-japanese/SKILL.md) | AIの回答を、必要な補足を添えつつ、自然で理解しやすい日本語に整える |
 | [rfp](skills/rfp/SKILL.md) | 対話で言葉にした要望の骨格を、人にもエージェントにも渡せるRFP（提案依頼書）のMarkdownにまとめる |
+| [software-spec](skills/software-spec/SKILL.md) | RFPをもとに、対話で必要最小限のソフトウェア要件と技術構成を決め、二つのMarkdownにまとめる |
 | [thinking-partner](skills/thinking-partner/SKILL.md) | 対話で思いと要望の骨格を一緒に言語化する |
 | [wait-what](skills/wait-what/SKILL.md) | 直前の説明を、背景や話のつながりを補って、やさしい日本語で短く説明し直す |
 
@@ -24,6 +25,7 @@ npx skills@latest add keimvm/skills
 npx skills@latest add keimvm/skills --skill html -g
 npx skills@latest add keimvm/skills --skill natural-japanese -g
 npx skills@latest add keimvm/skills --skill rfp -g
+npx skills@latest add keimvm/skills --skill software-spec -g
 npx skills@latest add keimvm/skills --skill thinking-partner -g
 npx skills@latest add keimvm/skills --skill wait-what -g
 ```
@@ -39,6 +41,10 @@ npx skills@latest add . --list
 ```bash
 npx skills@latest add keimvm/skills --skill thinking-partner rfp -g
 ```
+
+`software-spec`は、作成済みのRFPを渡して「`$software-spec このRFPから要件と技術構成を詰めたい`」のように呼び出します。AIの提案・推奨理由を参考に、対話で一つずつ決め、実装に必要な最小限の内容を `software-requirements.md` と `software-stack.md` に保存します。細部は実装時に委ね、まだ判断が必要な未決事項とは分けて残します。保存先の指定や既存の文書配置がなければ `docs/` に保存します。
+
+`software-spec`はRFPを入力として使い、ほかのスキルは呼び出しません。RFPがあれば単体で利用できます。
 
 ## 更新・削除
 
