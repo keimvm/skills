@@ -8,8 +8,8 @@
 | --- | --- |
 | [html](skills/html/SKILL.md) | 文章や仕組みを構造化し、必要な図表を添えた単一HTMLの説明資料を作る |
 | [natural-japanese](skills/natural-japanese/SKILL.md) | AIの回答を、必要な補足を添えつつ、自然で理解しやすい日本語に整える |
-| [project-plan](skills/project-plan/SKILL.md) | 対話で企画の骨格を整理し、Markdownの企画書project-plan.mdにまとめる |
-| [software-spec](skills/software-spec/SKILL.md) | 企画書をもとに、対話で必要最小限のソフトウェア要件と技術構成を決め、二つのMarkdownにまとめる |
+| [project-plan](skills/project-plan/SKILL.md) | 対話で企画の骨格を言葉にし、Markdownの企画書project-plan.mdに残す |
+| [software-spec](skills/software-spec/SKILL.md) | 企画書を出発点に、実装に必要な最小限の要件と技術構成を対話で決め、二つのMarkdownに残す |
 | [wait-what](skills/wait-what/SKILL.md) | 直前の説明を、背景や話のつながりを補って、やさしい日本語で短く説明し直す |
 
 ## 使い方
@@ -34,9 +34,9 @@ npx skills@latest add . --list
 
 ### 企画から要件定義へ
 
-`project-plan`は「`$project-plan このアイデアの目的や範囲を整理したい`」のように呼び出します。ソフトウェアに限らず、対話で企画の骨格を整理し、認識がそろったら文書化の要否を再確認せず `project-plan.md` に保存します。目的・実現したい状態・範囲・制約に、概略の完了条件と成果物の形式、未決事項を加えた短い企画書です。
+`project-plan`は「`$project-plan このアイデアの目的や範囲を整理したい`」のように呼び出します。答えを渡すのではなく、問いかけと見立てで考えを引き出す側に立ち、目的・実現したい状態・範囲・大切にしたいことの四つがそろったら、文書化の要否を聞き直さずに `project-plan.md` へ保存します。概略の完了条件と成果物の形式、未決事項を添えた、一画面に収まる企画書です。対象はソフトウェアに限りません。
 
-`software-spec`は、企画書を渡して「`$software-spec docs/project-plan.mdから要件と技術構成を詰めたい`」のように呼び出します。AIの提案・推奨理由を参考に、対話で一つずつ決め、実装に必要な最小限の内容を `software-requirements.md` と `software-stack.md` に保存します。細部は実装時に委ね、まだ判断が必要な未決事項とは分けて残します。
+`software-spec`は、企画書を渡して「`$software-spec docs/project-plan.mdから要件と技術構成を詰めたい`」のように呼び出します。実装の方向を左右する論点を一つずつ取り上げ、選択肢と推奨理由を示して判断を仰ぎ、決まったことを `software-requirements.md` と `software-stack.md` に残します。細部は実装時に委ね、まだ判断が必要な未決事項とは分けて書きます。
 
 両スキルとも、途中でまとめを求めればその時点の内容を保存し、判断が必要な未決事項が残る場合は「検討中」と明記します。未確認・推定・案は合意事項と区別し、要件定義への引き継ぎでも確定扱いにしません。保存先はユーザー指定、既存の文書配置、標準の `docs/` の順に従います。
 
@@ -45,7 +45,7 @@ npx skills@latest add . --list
 | `project-plan` | `docs/project-plan.md` |
 | `software-spec` | `docs/software-requirements.md`、`docs/software-stack.md` |
 
-両スキルはそれぞれ文書保存まで完結し、ほかのスキルは呼び出しません。`software-spec`は企画書があれば単体で利用でき、既存のRFPもファイル名や保存場所を変えずに渡せます。
+両スキルはそれぞれ文書の保存まで完結し、ほかのスキルは呼び出しません。`software-spec`は企画書があれば単体で使え、既存のRFPもファイル名や保存場所を変えずに渡せます。
 
 ### 旧スキルからの切り替え
 
