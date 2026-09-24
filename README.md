@@ -7,7 +7,7 @@ AIエージェントとの会話で、考えの整理、文章の推敲、説明
 | スキル | 用途 |
 | --- | --- |
 | [html](skills/html/SKILL.md) | 文章や仕組みを構造化し、必要な図表を添えた単一HTMLの説明資料を作る |
-| [improvement-request](skills/improvement-request/SKILL.md) | 指定したファイルへの不満を対話で言葉にし、Markdownの改善要望 `improvement-request.md` に残す |
+| [improvement-request](skills/improvement-request/SKILL.md) | 指定したファイルへの不満を対話で言葉にし、Markdownの改善要望としてチャットに出力する |
 | [natural-japanese](skills/natural-japanese/SKILL.md) | 文章の意味を保ちながら、自然で理解しやすい日本語に整える |
 | [project-plan](skills/project-plan/SKILL.md) | 対話で企画の骨格を言葉にし、Markdownの企画書 `requirements.md` に残す |
 | [software-spec](skills/software-spec/SKILL.md) | 企画書を出発点に、実装に必要な最小限の要件と技術構成を対話で決め、二つのMarkdownに残す |
@@ -51,7 +51,7 @@ Codexでは、会話に `$スキル名` と依頼内容を入力して呼び出�
 
 ### ファイルの改善要望をまとめる
 
-ファイルに不満はあるのに何が悪いのかうまく言えないときは、対象のファイルを指定して `improvement-request` を呼び出します。AIもファイルを読んで気になる点を候補として示しますが、要望として残すのは、あなたが「それだ」と認めたものだけです。一つずつ言葉にして確かめ、ほかに気になることがなくなったら、改善要望の文書に保存します。保存先を指定しなければ、既存の文書配置に合わせ、配置が決まっていない場合は `docs/improvement-request.md` に保存します。
+ファイルに不満はあるのに何が悪いのかうまく言えないときは、対象のファイルを指定して `improvement-request` を呼び出します。AIはファイルを読み、前提を問い直す問いかけや見方の推奨を出して、考えるきっかけを示します。ただし、要望として残すのは、あなたが「それだ」と認めたものだけです。一つずつ言葉にして確かめ、ほかに気になることがなくなったら、改善要望の文書をMarkdownのコードブロックでチャットに出力します。ファイルには保存しないので、そのまま別のエージェントに貼って使えます。
 
 このスキルはファイルを直しません。修正は、文書ができた後に別途依頼してください。
 
