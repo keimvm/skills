@@ -32,7 +32,7 @@ description: このスキルで何を行い、どのような依頼で使うか�
 
 ## 呼び出しとスキル間の連携
 
-- 対話系スキル（`natural-japanese`、`project-plan`、`software-spec`、`wait-what`）は `disable-model-invocation: true` を付け、ユーザーが明示的に呼ぶ前提にする。`html` は付けず、モデルが自動選択できる。新規スキルもこの区別に従う。
+- 対話系スキル（`improvement-request`、`natural-japanese`、`project-plan`、`software-spec`、`wait-what`）は `disable-model-invocation: true` を付け、ユーザーが明示的に呼ぶ前提にする。`html` は付けず、モデルが自動選択できる。新規スキルもこの区別に従う。
 - `project-plan` と `software-spec` は、それぞれ対話から文書の保存まで担当し、ほかのスキルは呼び出さない。企画書 `requirements.md` を介して連携し、標準の保存先は `docs/` とする。
 
 ## html スキルの保守
