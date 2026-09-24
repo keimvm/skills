@@ -1,6 +1,6 @@
 ---
 name: software-spec
-description: 企画書（project-plan.mdなど）を出発点に、実装を始めるために必要な最小限のソフトウェア要件と技術構成を対話で決め、software-requirements.mdとsoftware-stack.mdに残す。実装前に要件を詰めたい、技術選定を提案と推奨理由つきで一つずつ判断したいときに使う。
+description: 企画書（requirements.mdなど）を出発点に、実装を始めるために必要な最小限のソフトウェア要件と技術構成を対話で決め、software-requirements.mdとsoftware-stack.mdに残す。実装前に要件を詰めたい、技術選定を提案と推奨理由つきで一つずつ判断したいときに使う。
 disable-model-invocation: true
 ---
 
@@ -10,8 +10,8 @@ disable-model-invocation: true
 
 ## 入口
 
-- 標準の入力は `project-plan` が作る `project-plan.md`。別名の企画書も、ファイル名や場所を変えずにそのまま使える。
-- 指定がなければ既存の文書配置や `docs/project-plan.md` を探し、見つからない、または迷うときだけ、どの企画書を使うか尋ねる。
+- 標準の入力は `project-plan` が作る `requirements.md`。別名の企画書も、ファイル名や場所を変えずにそのまま使える。
+- 指定がなければ既存の文書配置や `docs/requirements.md` を探し、見つからない、または迷うときだけ、どの企画書を使うか尋ねる。
 - 企画書を読み、目的・実現したい状態・範囲・制約を短く言い換えて認識を合わせる。未確認・推定・未決は、その状態のまま引き継ぐ。
 - 既に決まっていることは問い直さない。実装の方向を左右する未決事項から、今扱う論点を一つ選ぶ。
 

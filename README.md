@@ -8,7 +8,7 @@ AIエージェントとの会話で、考えの整理、文章の推敲、説明
 | --- | --- |
 | [html](skills/html/SKILL.md) | 文章や仕組みを構造化し、必要な図表を添えた単一HTMLの説明資料を作る |
 | [natural-japanese](skills/natural-japanese/SKILL.md) | 文章の意味を保ちながら、自然で理解しやすい日本語に整える |
-| [project-plan](skills/project-plan/SKILL.md) | 対話で企画の骨格を言葉にし、Markdownの企画書 `project-plan.md` に残す |
+| [project-plan](skills/project-plan/SKILL.md) | 対話で企画の骨格を言葉にし、Markdownの企画書 `requirements.md` に残す |
 | [software-spec](skills/software-spec/SKILL.md) | 企画書を出発点に、実装に必要な最小限の要件と技術構成を対話で決め、二つのMarkdownに残す |
 | [wait-what](skills/wait-what/SKILL.md) | 直前の説明を、背景や話のつながりを補って、やさしい日本語で短く説明し直す |
 
@@ -41,7 +41,7 @@ Codexでは、会話に `$スキル名` と依頼内容を入力して呼び出�
 | `html` | `$html この仕組みを、図を交えたHTMLの説明資料にして` |
 | `natural-japanese` | `$natural-japanese この文章を自然な日本語に整えて` |
 | `project-plan` | `$project-plan このアイデアの目的や範囲を整理したい` |
-| `software-spec` | `$software-spec docs/project-plan.mdから要件と技術構成を詰めたい` |
+| `software-spec` | `$software-spec docs/requirements.mdから要件と技術構成を詰めたい` |
 | `wait-what` | `$wait-what 今の説明をもう少しかみ砕いて` |
 
 対象の文章・資料は、依頼と一緒に貼り付けるか、ファイルを指定してください。`html` の成果物は、ブラウザで直接開ける単一のHTMLファイルです。
@@ -56,7 +56,7 @@ Codexでは、会話に `$スキル名` と依頼内容を入力して呼び出�
 
 | スキル | 標準の出力先 |
 | --- | --- |
-| `project-plan` | `docs/project-plan.md` |
+| `project-plan` | `docs/requirements.md` |
 | `software-spec` | `docs/software-requirements.md`、`docs/software-stack.md` |
 
 ## 更新・削除
